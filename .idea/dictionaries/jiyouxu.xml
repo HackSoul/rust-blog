@@ -2,6 +2,7 @@
   <dictionary name="jiyouxu">
     <words>
       <w>actix</w>
+      <w>dotenv</w>
     </words>
   </dictionary>
 </component>

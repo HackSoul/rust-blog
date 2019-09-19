@@ -1,4 +1,8 @@
 mod api;
+mod service;
+mod dao;
+mod entity;
+
 use actix_web::{middleware, web, App, HttpServer};
 
 fn main() -> std::io::Result<()> {
@@ -8,7 +12,6 @@ fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .wrap(middleware::Logger::default())
-            .service(web::resource("/index.html").to(|| "Hello world!"))
             .service(web::resource("/").to(api::index::index))
     }).bind("127.0.0.1:8080")?.run()
 }
