@@ -15,6 +15,6 @@ fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .wrap(middleware::Logger::default())
-            .service(web::resource("/").to(api::index::index))
+            .service(web::resource("/").to(api::topic_api::create_topic))
     }).bind("127.0.0.1:8080")?.run()
 }
